@@ -1,0 +1,628 @@
+/* ===========================================
+   A Tiny Surprise for Bauni 🌸
+   Premium Pink Theme
+=========================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+
+--pink:#ff5fa2;
+--pink2:#ff89bf;
+--light:#fff7fb;
+--glass:rgba(255,255,255,.35);
+--text:#4f4f4f;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(135deg,#ffd8eb,#ffeef7,#fff8fc);
+
+min-height:100vh;
+
+overflow:hidden;
+
+color:var(--text);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+/* Loader */
+
+#loader{
+
+position:fixed;
+
+inset:0;
+
+background:linear-gradient(135deg,#ffd8eb,#fff);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+transition:.8s;
+
+}
+
+.loaderCat{
+
+font-size:70px;
+
+animation:bounce 1s infinite;
+
+}
+
+#loader h2{
+
+margin-top:20px;
+
+color:var(--pink);
+
+}
+
+#loader p{
+
+margin-top:10px;
+
+color:#666;
+
+}
+
+/* Music */
+
+#musicBtn{
+
+position:fixed;
+
+top:20px;
+
+right:20px;
+
+width:58px;
+
+height:58px;
+
+border:none;
+
+border-radius:50%;
+
+background:var(--pink);
+
+color:white;
+
+font-size:22px;
+
+cursor:pointer;
+
+box-shadow:0 10px 25px rgba(255,95,162,.35);
+
+z-index:999;
+
+}
+
+/* Main */
+
+#pages{
+
+width:100%;
+
+max-width:430px;
+
+position:relative;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+/* Pages */
+
+.page{
+
+position:absolute;
+
+width:100%;
+
+padding:20px;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+animation:fade .6s ease;
+
+}
+
+.page.active{
+
+display:flex;
+
+}
+
+/* Card */
+
+.card{
+
+width:100%;
+
+background:var(--glass);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.5);
+
+border-radius:30px;
+
+padding:30px;
+
+text-align:center;
+
+box-shadow:0 20px 50px rgba(255,105,180,.18);
+
+}
+
+.finalCard{
+
+padding-bottom:45px;
+
+}
+
+/* Text */
+
+h1{
+
+font-family:'Pacifico',cursive;
+
+font-size:2.2rem;
+
+color:var(--pink);
+
+margin-bottom:15px;
+
+}
+
+h2{
+
+font-size:1.7rem;
+
+margin-bottom:18px;
+
+color:var(--pink);
+
+}
+
+h3{
+
+margin:15px 0;
+
+color:var(--pink);
+
+}
+
+p{
+
+line-height:1.8;
+
+font-size:1rem;
+
+margin:15px 0;
+
+}
+
+.emoji{
+
+font-size:75px;
+
+margin:18px 0;
+
+animation:bounce 2s infinite;
+
+}
+
+.big{
+
+font-size:95px;
+
+}
+
+/* Buttons */
+
+.buttonRow{
+
+display:flex;
+
+gap:15px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+margin-top:25px;
+
+}
+
+button{
+
+padding:15px 28px;
+
+border:none;
+
+border-radius:999px;
+
+font-size:1rem;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+#yesBtn,
+.nextBtn,
+#restartBtn{
+
+background:var(--pink);
+
+color:white;
+
+box-shadow:0 12px 25px rgba(255,95,162,.35);
+
+}
+
+#yesBtn:hover,
+.nextBtn:hover,
+#restartBtn:hover{
+
+transform:translateY(-3px);
+
+}
+
+#noBtn{
+
+background:white;
+
+color:var(--pink);
+
+position:relative;
+
+}
+
+.hint{
+
+font-size:.9rem;
+
+color:#888;
+
+margin-top:15px;
+
+}
+
+/* Certificate */
+
+.certificate{
+
+background:white;
+
+padding:20px;
+
+border-radius:22px;
+
+margin:20px 0;
+
+text-align:left;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.certificate p{
+
+margin:8px 0;
+
+}
+
+.finalText{
+
+text-align:left;
+
+}
+
+.madeBy{
+
+margin-top:25px;
+
+font-weight:600;
+
+color:var(--pink);
+
+}
+
+.finalOnly{
+
+text-align:center;
+
+padding:40px;
+
+}/* ===========================================
+   STYLE.CSS — PART B
+===========================================*/
+
+/* ---------- Envelope ---------- */
+
+#envelope{
+width:240px;
+height:170px;
+margin:25px auto;
+position:relative;
+cursor:pointer;
+perspective:1000px;
+}
+
+#envelope .paper{
+position:absolute;
+left:50%;
+bottom:0;
+transform:translateX(-50%);
+width:90%;
+height:145px;
+background:#fff;
+border-radius:12px;
+padding:18px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+z-index:1;
+transition:.7s;
+}
+
+#envelope .lid{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#ff8cbc,#ff5fa2);
+clip-path:polygon(0 0,100% 0,50% 60%);
+transform-origin:top;
+transition:.7s;
+z-index:2;
+}
+
+#envelope.open .lid{
+transform:rotateX(180deg);
+}
+
+#envelope.open .paper{
+transform:translate(-50%,-35px);
+}
+
+/* ---------- Floating Hearts ---------- */
+
+#hearts,
+#sparkles,
+#rain,
+#sunshine,
+#confetti{
+position:fixed;
+inset:0;
+pointer-events:none;
+overflow:hidden;
+}
+
+.heart{
+position:absolute;
+bottom:-30px;
+font-size:22px;
+animation:heartFloat linear forwards;
+opacity:.9;
+}
+
+.sparkle{
+position:absolute;
+font-size:14px;
+animation:twinkle 2s infinite;
+opacity:.7;
+}
+
+.drop{
+position:absolute;
+width:2px;
+height:16px;
+background:rgba(255,255,255,.7);
+animation:rainFall linear infinite;
+}
+
+.sun{
+position:absolute;
+top:70px;
+right:50px;
+width:120px;
+height:120px;
+border-radius:50%;
+background:#ffd95e;
+box-shadow:0 0 80px #ffe58d;
+opacity:0;
+transition:2s;
+}
+
+.confetti{
+position:absolute;
+width:10px;
+height:18px;
+border-radius:3px;
+animation:confettiFall 4s linear forwards;
+}
+
+/* ---------- Animations ---------- */
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(25px) scale(.98);
+}
+to{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+}
+
+@keyframes bounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-12px);
+}
+}
+
+@keyframes heartFloat{
+0%{
+transform:translateY(0) scale(.7);
+opacity:0;
+}
+15%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) scale(1.4);
+opacity:0;
+}
+}
+
+@keyframes twinkle{
+0%,100%{
+transform:scale(.7);
+opacity:.3;
+}
+50%{
+transform:scale(1.2);
+opacity:1;
+}
+}
+
+@keyframes rainFall{
+0%{
+transform:translateY(-20px);
+}
+100%{
+transform:translateY(110vh);
+}
+}
+
+@keyframes confettiFall{
+0%{
+transform:translateY(-30px) rotate(0deg);
+}
+100%{
+transform:translateY(120vh) rotate(720deg);
+}
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width:480px){
+
+.card{
+padding:24px;
+margin:12px;
+}
+
+h1{
+font-size:1.9rem;
+}
+
+h2{
+font-size:1.45rem;
+}
+
+.emoji{
+font-size:60px;
+}
+
+.big{
+font-size:80px;
+}
+
+.buttonRow{
+flex-direction:column;
+}
+
+button{
+width:100%;
+}
+
+#envelope{
+width:200px;
+height:145px;
+}
+
+#envelope .paper{
+height:120px;
+font-size:.9rem;
+}
+
+}
+
+/* ---------- Background Glow ---------- */
+
+body::before{
+content:"";
+position:fixed;
+width:320px;
+height:320px;
+left:-120px;
+top:-120px;
+border-radius:50%;
+background:#ffc8e1;
+filter:blur(90px);
+opacity:.6;
+z-index:-2;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:320px;
+height:320px;
+right:-120px;
+bottom:-120px;
+border-radius:50%;
+background:#ffdced;
+filter:blur(90px);
+opacity:.6;
+z-index:-2;
+}
